@@ -3,7 +3,8 @@
   --pageColor: #eee;
 }
 
-html {
+html,
+a, button, input {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
@@ -59,10 +60,16 @@ body {
 .list__color-item {
   flex: 1;
   opacity: 0.75;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
 .list__color-item:hover {
   opacity: 1;
+}
+
+.list__color-item:focus,
+.list__color-item:active {
+  border-bottom: 2px solid #000;
 }
 
 .color-item__input {
