@@ -3,6 +3,11 @@
   --pageColor: #eee;
 }
 
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
 /*
  * Utility Classes
  */
