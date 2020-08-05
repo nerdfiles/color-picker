@@ -36,7 +36,7 @@ const generatePalette = (config) => {
     listElement
       .setAttribute('class', 'list__color-item no-bullet no-margin');
     listElement
-      .setAttribute('style', `background-color: ${colorList[i].hex}`)
+      .setAttribute('style', `background-color: ${colorList[i].hex}`);
 
     inputElement = document.createElement('input');
 
