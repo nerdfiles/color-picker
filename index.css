@@ -3,6 +3,10 @@
   --pageColor: #eee;
 }
 
+input {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 html,
 a, button, input {
   -ms-touch-action: manipulation;
@@ -67,7 +71,6 @@ body {
   opacity: 1;
 }
 
-.list__color-item:focus,
 .list__color-item:active {
   border-bottom: 2px solid #000;
 }
@@ -76,5 +79,9 @@ body {
   width: 100%;
   cursor: pointer;
   opacity: 0;
+}
+
+.color-item__input:active {
+  background-color: none;
 }
 
