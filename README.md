@@ -4,8 +4,8 @@ Vanilla JS color picker with BEM classes
 
 ## Serve
 
-1. python -m http.server PORT
-2. surge.sh (last used: https://better-giants.surge.sh/)
+1. Local development: python -m http.server PORT (cheap but good enough)
+2. Remote environment: [surge.sh](https://surge.sh/) (last used: https://better-giants.surge.sh/)
 
 ## Static Analysis
 
