@@ -97,7 +97,7 @@ const newPicker = (config) => {
 
   const li = listContainer.querySelectorAll('li');
 
-  li.forEach((element) => {
+  const togglableTriggerEvent = (element) => {
     element.addEventListener('change', (e) => {
       colorPickerPreview.setAttribute('style', `background-color: ${e.target.value}`);
       const checkboxesForComponent = Array.from(component.querySelectorAll('input'));
@@ -108,7 +108,9 @@ const newPicker = (config) => {
       }
       e.target.setAttribute('aria-checked', 'true');
     });
-  });
+  };
+
+  li.forEach(togglableTriggerEvent);
 };
 
 const loadedListener = () => {
