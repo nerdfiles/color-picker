@@ -17,10 +17,8 @@
     "url": "https://github.com/nerdfiles/color-picker/issues"
   },
   "homepage": "https://github.com/nerdfiles/color-picker#readme",
-  "dependencies": {
-    "es6-plato": "^1.2.3"
-  },
   "devDependencies": {
+    "es6-plato": "^1.2.3",
     "specificity-graph": "^0.1.7"
   }
 }
