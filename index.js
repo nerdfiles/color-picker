@@ -19,9 +19,7 @@ const createColorListContainer = () => {
 const generatePalette = (config) => {
 
   const {
-    colorList,
-    previewElem,
-    parent
+    colorList
   } = config;
 
   let inputElement;
@@ -67,17 +65,6 @@ const generatePalette = (config) => {
     inputElement
       .setAttribute('name', `colorItemInput-${idForInputName}`);
 
-    inputElement.addEventListener('change', (e) => {
-      previewElem.setAttribute('style', `background-color: ${e.target.value}`);
-      const checkboxesForComponent = Array.from(parent.querySelectorAll('input'));
-      let checkbox;
-      for (var j = 0; j < checkboxesForComponent.length; j++) {
-        checkbox = checkboxesForComponent[j];
-        checkbox.setAttribute('aria-checked', 'false');
-      }
-      e.target.setAttribute('aria-checked', 'true');
-    });
-
     listElement.appendChild(inputElement);
 
     inputList.push(listElement);
@@ -85,7 +72,6 @@ const generatePalette = (config) => {
   }
 
   return inputList;
-
 };
 
 const newPicker = (config) => {
@@ -97,13 +83,11 @@ const newPicker = (config) => {
   const colorPickerPalette = component.querySelector('.color-picker__palette')
 
   const paletteConfig = {
-    colorList: colorList,
-    previewElem: colorPickerPreview,
-    parent: component
+    colorList: colorList
   };
 
-  const listContainer = createColorListContainer();
   const listOfColors = generatePalette(paletteConfig);
+  const listContainer = createColorListContainer();
 
   listOfColors.forEach((elemRef) => {
     listContainer.appendChild(elemRef);
@@ -111,6 +95,20 @@ const newPicker = (config) => {
 
   colorPickerPalette.appendChild(listContainer);
 
+  const li = listContainer.querySelectorAll('li');
+
+  li.forEach((element) => {
+    element.addEventListener('change', (e) => {
+      colorPickerPreview.setAttribute('style', `background-color: ${e.target.value}`);
+      const checkboxesForComponent = Array.from(component.querySelectorAll('input'));
+      let checkbox;
+      for (var j = 0; j < checkboxesForComponent.length; j++) {
+        checkbox = checkboxesForComponent[j];
+        checkbox.setAttribute('aria-checked', 'false');
+      }
+      e.target.setAttribute('aria-checked', 'true');
+    });
+  });
 };
 
 const loadedListener = () => {
