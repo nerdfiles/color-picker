@@ -107,7 +107,7 @@ const newPicker = (config) => {
         checkbox.setAttribute('aria-checked', 'false');
       }
       e.target.setAttribute('aria-checked', 'true');
-    });
+    }, false);
   };
 
   li.forEach(togglableTriggerEvent);
